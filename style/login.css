@@ -6,7 +6,7 @@ main
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: #DB4244;
     align-items: center;
 }
 
@@ -19,7 +19,7 @@ main
     height: 63%;
     text-align: center;
     justify-content: center;
-    background-color: red;
+    background-color: #DB4244;
 }
 
 #form_login label, #form_login input
