@@ -1,0 +1,50 @@
+nav
+{
+    display: flex;
+    background-color: red;
+}
+
+main
+{
+    height: 80%;
+    background-color: green;
+}
+
+footer p
+{
+    display: none;
+}
+
+nav
+{
+    height: 100%;
+    display: flex;
+}
+
+header
+{
+    height: 10%;
+}
+
+footer
+{
+    height: 10%;
+}
+
+.nav_bar_button
+{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+#ajuda_placeholder
+{
+    display: flex;
+    justify-content: center;
+}
+
+#ajuda_placeholder img
+{
+    width: 200%;
+}
