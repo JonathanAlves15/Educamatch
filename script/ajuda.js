@@ -7,8 +7,6 @@ for(let i = 0; i < ajudaLabels.length; i++)
     label.onmousedown = () => {
         let span = label.querySelector("span");
 
-        console.log(span.style.backgroundColor);
-
         if(span.style.backgroundColor != "rgb(219, 66, 68)")
             span.style.backgroundColor = "rgb(219, 66, 68)";
         else
