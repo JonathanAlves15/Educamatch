@@ -4,10 +4,8 @@ main
     font-family: Segoe UI;
     color: white;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     background-color: #DB4244;
-    align-items: center;
+    padding: 0px;
 }
 
 #form_login

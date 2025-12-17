@@ -8,20 +8,31 @@
 <link rel="stylesheet" href="style/general.css">
 <link rel="stylesheet" href="style/home.css">
 <body>
-    <!-- Sem o header talvez fique melhor no PC -->
     <header>
         <nav>
             <img id="educamatch_logo" src="img/educamatch_logo.png" alt="">
         </nav>
     </header>
     <main>
-        <div id="ajuda_placeholder">
+        <form id="form_pesquisar" action="">
+            <input id="input_pesquisar" type="search" placeholder="Pesquisar">
+        </form>
+        <div id="div_ajuda_placeholder">
             <img src="img/estudante_placeholder.png" alt="">
-            <div id="ajuda_overlay">
+            <div id="div_perfil_info">
                 <p><b>Nome: Isabela Rodrigues Almeida</b></p>
                 <p><b>Instituição: IFCE</b></p>
                 <p><b>Curso: Engenharia</b></p>
-                <p><b>Preciso de ajuda com umas atividades de Calculo Integral</b></p>
+                <p><b>Habilidades desejadas: Matemática</b></p>
+                <p><b>Preciso de ajuda com algumas atividades de Calculo Integral. De preferência, alguém muito bom em matemática seria de grande ajuda</b></p>
+            </div>
+            <div id="div_perfil_info_buttons">
+                <div id="div_cancelar" class="div_ajuda_buttons">
+                    <b>Descartar</b>
+                </div>
+                <div id="div_aceitar" class="div_ajuda_buttons">
+                    <b>Aceitar</b>
+                </div>
             </div>
         </div>
     </main>
@@ -32,8 +43,6 @@
             <img id="button_ajuda" class="nav_bar_button" src="img/open-book.png" alt="">
             <img id="button_chat" class="nav_bar_button" src="img/chat.png" alt="">
         </nav>
-        <!-- Parágrafo aparece apenas no PC -->
-        <p>Todos os direitos reservados</p>
     </footer>
 </body>
 <script src="script/footer_nav.js"></script>

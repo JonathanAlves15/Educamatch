@@ -5,3 +5,53 @@ body, html
     height: 100%;
     font-family: Segoe UI;
 }
+
+nav
+{
+    display: flex;
+    background-color: white;
+}
+
+main
+{
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #DB4244;
+}
+
+nav
+{
+    height: 100%;
+    display: flex;
+}
+
+header
+{
+    height: 10%;
+}
+
+footer
+{
+    height: 10%;
+}
+
+#nav_footer
+{
+    display: flex;
+    justify-content: center;
+}
+
+.nav_bar_button
+{
+    height: 40px;
+    padding: 5px;
+    margin: 10px 20px;
+    opacity: 60%;
+}
+
+.nav_bar_button:hover
+{
+    cursor: pointer;
+}
