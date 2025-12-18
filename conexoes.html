@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexões - Educamatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/conexoes.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <a href="home.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-title">Conexões</div>
+            <div class="header-actions">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-filter"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FILTROS -->
+    <div class="filters">
+        <div class="filter-group">
+            <label class="filter-label">Ordenar por:</label>
+            <select class="filter-select" id="sortBy">
+                <option value="match">Melhor Match</option>
+                <option value="recent">Mais Recentes</option>
+                <option value="name">Nome A-Z</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label class="filter-label">Habilidade:</label>
+            <select class="filter-select" id="skillFilter">
+                <option value="">Todas as habilidades</option>
+                <option value="javascript">JavaScript</option>
+                <option value="design">Design UI/UX</option>
+                <option value="python">Python</option>
+                <option value="marketing">Marketing</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- LISTA DE CONEXÕES -->
+    <div class="container">
+        <div class="connections-list" id="connectionsList">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Carregando conexões...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="conexoes.html" class="nav-item active">
+            <i class="fas fa-user-friends"></i>
+            <span>Conexões</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="comunidade.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Comunidade</span>
+        </a>
+        <a href="mentorias.html" class="nav-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Mentorias</span>
+        </a>
+    </nav>
+    <script src="script/conexao.js"></script>
+</body>
+</html>

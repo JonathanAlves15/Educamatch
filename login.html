@@ -1,27 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educamatch - Login</title>
+    <title>Educamatch - Login & Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/login.css">
 </head>
-<link rel="stylesheet" href="style/general.css">
-<link rel="stylesheet" href="style/login.css">
 <body>
-    <main>
-        <div>
-            <div id="div_logo_container">
-                <img id="img_logo" src="img/educamatch_logo.png" alt="">
+    <div class="container">
+        <!-- LEFT SIDE - IMAGE/INFO -->
+        <div class="left-side">
+            <h2>Junte-se à nossa comunidade</h2>
+            <p>Conecte-se com pessoas que podem ensinar o que você quer aprender e aprender o que você pode ensinar.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div>
+                        <h4>Conexões Inteligentes</h4>
+                        <p>Matches baseados em habilidades e interesses</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4>Aprendizado Colaborativo</h4>
+                        <p>Estude, colabore e cresça com outros profissionais</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h4>Networking com Propósito</h4>
+                        <p>Conecte-se com intenção e significado</p>
+                    </div>
+                </div>
             </div>
-            <form id="form_login" action="">
-                <label for="input_usuario">Usuário</label>
-                <input id="input_usuario" type="text">
-                <label for="input_senha">Senha</label>
-                <input id="input_senha" type="password">
-                <span id="span_entrar">Entrar</span>
-            </form>
         </div>
-    </main>
+        
+        <!-- RIGHT SIDE - FORMS -->
+        <div class="right-side">
+            <!-- LOGO -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <img id="img-logo-icon" src="img/logo1.png" alt="">
+                </div>
+                <div class="logo-text">
+                    <h1>ConectaConhecimento</h1>
+                    <p>Conectando talentos e conhecimentos</p>
+                </div>
+            </div>
+            
+            <!-- FORM TABS -->
+            <div class="form-tabs">
+                <div class="tab active" onclick="showForm('login')">Login</div>
+                <div class="tab" onclick="showForm('register')">Cadastro</div>
+            </div>
+            
+            <!-- ERROR MESSAGE -->
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorText">Mensagem de erro</span>
+            </div>
+            
+            <!-- LOGIN FORM -->
+            <div class="form active" id="loginForm">
+                <h3 class="form-title">Bem-vindo de volta!</h3>
+                <p class="form-subtitle">Faça login para continuar sua jornada</p>
+                
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label class="input-label">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" class="input-field" id="loginEmail" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="input-label">Senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="input-field" id="loginPassword" placeholder="Sua senha" required>
+                            <button type="button" class="password-toggle" id="toggleLoginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <div class="remember-checkbox" id="loginRememberCheckbox" onclick="toggleRemember('login')">
+                                <i class="fas fa-check" style="display: none; font-size: 12px;"></i>
+                            </div>
+                            <span>Lembrar-me</span>
+                        </div>
+                        <a href="#" class="forgot-link" onclick="openForgotModal()">Esqueci a senha</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="loginButton">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Entrar</span>
+                    </button>
+                    
+                    <div class="loading" id="loginLoading">
+                        <div class="spinner"></div>
+                        <span>Entrando...</span>
+                    </div>
+                </form>
+                
+                <div class="divider">
+                    <span class="divider-text">Ou continue com</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="social-btn google" onclick="loginWithGoogle()">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn facebook" onclick="loginWithFacebook()">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                    Novo por aqui? <a href="#" onclick="showForm('register')" style="color: #436BD9; font-weight: 500;">Crie uma conta</a>
+                </div>
+            </div>
+            
+            <!-- REGISTER FORM -->
+            <div class="form" id="registerForm">
+                <h3 class="form-title">Crie sua conta</h3>
+                <p class="form-subtitle">Comece sua jornada de aprendizado colaborativo</p>
+                
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label class="input-label">Nome completo</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" class="input-field" id="registerName" placeholder="Seu nome completo" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="input-label">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" class="input-field" id="registerEmail" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="input-label">Senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="input-field" id="registerPassword" placeholder="Mínimo 6 caracteres" required>
+                            <button type="button" class="password-toggle" id="toggleRegisterPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="input-label">Confirmar senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="input-field" id="registerConfirmPassword" placeholder="Digite novamente" required>
+                        </div>
+                    </div>
+                    
+                    <div class="terms">
+                        <div class="terms-checkbox" id="termsCheckbox" onclick="toggleTerms()">
+                            <i class="fas fa-check" style="display: none; font-size: 12px;"></i>
+                        </div>
+                        <div>
+                            Eu concordo com os <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="registerButton">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Criar conta</span>
+                    </button>
+                    
+                    <div class="loading" id="registerLoading">
+                        <div class="spinner"></div>
+                        <span>Criando conta...</span>
+                    </div>
+                </form>
+                
+                <div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                    Já tem uma conta? <a href="#" onclick="showForm('login')" style="color: #436BD9; font-weight: 500;">Faça login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FORGOT PASSWORD MODAL -->
+    <div class="modal" id="forgotModal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <i class="fas fa-key" style="color: #436BD9; margin-right: 10px;"></i>
+                Recuperar Senha
+            </div>
+            <p class="modal-text">
+                Digite seu email para receber um link de recuperação de senha.
+            </p>
+            
+            <div class="form-group">
+                <label class="input-label">Email</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" class="input-field" id="recoveryEmail" placeholder="seu@email.com">
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeForgotModal()" style="flex: 1;">
+                    Cancelar
+                </button>
+                <button class="btn btn-primary" onclick="sendRecoveryEmail()" style="flex: 1;">
+                    Enviar Link
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script/login.js"></script>
 </body>
-<script src="script/login.js"></script>
 </html>

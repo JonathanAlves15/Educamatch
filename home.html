@@ -1,49 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educamatch - Home</title>
+    <title>Educamatch - Início</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/home.css">
 </head>
-<link rel="stylesheet" href="style/general.css">
-<link rel="stylesheet" href="style/home.css">
 <body>
-    <header>
-        <nav>
-            <img id="educamatch_logo" src="img/educamatch_logo.png" alt="">
-        </nav>
-    </header>
-    <main>
-        <form id="form_pesquisar" action="">
-            <input id="input_pesquisar" type="search" placeholder="Pesquisar">
-        </form>
-        <div id="div_ajuda_placeholder">
-            <img src="img/estudante_placeholder.png" alt="">
-            <div id="div_perfil_info">
-                <p><b>Nome: Isabela Rodrigues Almeida</b></p>
-                <p><b>Instituição: IFCE</b></p>
-                <p><b>Curso: Engenharia</b></p>
-                <p><b>Habilidades desejadas: Matemática</b></p>
-                <p><b>Preciso de ajuda com algumas atividades de Calculo Integral. De preferência, alguém muito bom em matemática seria de grande ajuda</b></p>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <img id="img_logo" src="img/logo2.png" alt="">
+            <h1>Educamatch</h1>
+        </div>
+        <p class="tagline">Match perfeito entre você e o conhecimento</p>
+    </div>
+    
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">154</div>
+                <div class="stat-label">Usuários</div>
             </div>
-            <div id="div_perfil_info_buttons">
-                <div id="div_cancelar" class="div_ajuda_buttons">
-                    <b>Descartar</b>
-                </div>
-                <div id="div_aceitar" class="div_ajuda_buttons">
-                    <b>Aceitar</b>
-                </div>
+            <div class="stat-card">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Conexões</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Projetos</div>
             </div>
         </div>
-    </main>
-    <footer>
-        <nav id="nav_footer">
-            <img id="button_perfil" class="nav_bar_button" src="img/user.png" alt="">
-            <img id="button_home" class="nav_bar_button" src="img/interface.png" alt="">
-            <img id="button_ajuda" class="nav_bar_button" src="img/open-book.png" alt="">
-            <img id="button_chat" class="nav_bar_button" src="img/chat.png" alt="">
-        </nav>
-    </footer>
+        
+        <!-- QUICK ACTIONS -->
+        <div class="quick-actions">
+            <div class="section-title">
+                <i class="fas fa-bolt"></i>
+                <span>Ações Rápidas</span>
+            </div>
+            
+            <div class="action-grid">
+                <a href="perfil.html" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <div class="action-text">Completar Perfil</div>
+                </a>
+                
+                <a href="conexoes.html" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="action-text">Encontrar Conexões</div>
+                </a>
+                
+                <a href="mentorias.html" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="action-text">Buscar Mentor</div>
+                </a>
+                
+                <a href="comunidade.html" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="action-text">Explorar Comunidade</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- QUICK MATCHES -->
+        <div class="quick-matches">
+            <div class="section-title">
+                <i class="fas fa-user-friends"></i>
+                <span>Sugestões para Você</span>
+            </div>
+            
+            <div id="matchesContainer">
+                <!-- Matches serão carregados aqui -->
+                <div class="match-card">
+                    <div class="match-avatar">A</div>
+                    <div class="match-info">
+                        <div class="match-name">Ana Lúcia</div>
+                        <div class="match-skills">Design UI/UX, Figma</div>
+                        <div class="match-score">85% match</div>
+                    </div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="match-avatar">C</div>
+                    <div class="match-info">
+                        <div class="match-name">Carlos Mendes</div>
+                        <div class="match-skills">JavaScript, React</div>
+                        <div class="match-score">78% match</div>
+                    </div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="match-avatar">R</div>
+                    <div class="match-info">
+                        <div class="match-name">Roberto Alves</div>
+                        <div class="match-skills">Python, Data Science</div>
+                        <div class="match-score">72% match</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="conexoes.html" class="btn" style="margin-top: 20px;">
+                Ver Todas as Conexões
+            </a>
+        </div>
+    </div>
+    
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="conexoes.html" class="nav-item">
+            <i class="fas fa-user-friends"></i>
+            <span>Conexões</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="comunidade.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Comunidade</span>
+        </a>
+        <a href="mentorias.html" class="nav-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Mentorias</span>
+        </a>
+    </nav>
+    <script src="script/home.js"></script>
 </body>
-<script src="script/footer_nav.js"></script>
 </html>

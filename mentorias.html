@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorias - Educamatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/mentorias.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <a href="home.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-title">Mentorias</div>
+            <div class="header-actions">
+                <i class="fas fa-calendar-alt"></i>
+                <i class="fas fa-envelope"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TOGGLE BUSCAR/OFRECER -->
+    <div class="mentor-toggle">
+        <div class="toggle-title">Você está procurando:</div>
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" id="seekMentorBtn" onclick="showSeekMentor()">
+                Buscar um Mentor
+            </button>
+            <button class="toggle-btn" id="becomeMentorBtn" onclick="showBecomeMentor()">
+                Oferecer Mentoria
+            </button>
+        </div>
+    </div>
+    
+    <!-- SEÇÃO: BUSCAR MENTOR (PADRÃO) -->
+    <div id="seekMentorSection">
+        <!-- MENTORES DISPONÍVEIS -->
+        <div class="mentors-section">
+            <div class="section-title">
+                <span><i class="fas fa-user-graduate"></i> Mentores Disponíveis</span>
+                <a href="#" class="see-all">Ver todos</a>
+            </div>
+            
+            <div id="mentorsList">
+                <!-- Mentores serão carregados aqui -->
+                <div class="mentor-card">
+                    <div class="mentor-header">
+                        <div class="mentor-info">
+                            <div class="mentor-avatar">M</div>
+                            <div class="mentor-details">
+                                <div class="mentor-name">Marcos Silva</div>
+                                <div class="mentor-title">Senior Front-end Developer</div>
+                                <div class="mentor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    4.7 (28 avaliações)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mentor-price">R$ 150/h</div>
+                    </div>
+                    <div class="mentor-description">
+                        8 anos de experiência com React e Vue.js. Ajudo desenvolvedores a avançarem na carreira front-end.
+                    </div>
+                    <div class="mentor-skills">
+                        <span class="mentor-skill">React</span>
+                        <span class="mentor-skill">JavaScript</span>
+                        <span class="mentor-skill">TypeScript</span>
+                        <span class="mentor-skill">Carreira</span>
+                    </div>
+                    <div class="mentor-actions">
+                        <button class="mentor-btn request-btn" onclick="requestMentorship('Marcos Silva')">
+                            <i class="fas fa-calendar-check"></i> Solicitar Mentoria
+                        </button>
+                        <button class="mentor-btn profile-btn" onclick="viewProfile('Marcos Silva')">
+                            <i class="fas fa-user"></i> Ver Perfil
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mentor-card">
+                    <div class="mentor-header">
+                        <div class="mentor-info">
+                            <div class="mentor-avatar">A</div>
+                            <div class="mentor-details">
+                                <div class="mentor-name">Ana Costa</div>
+                                <div class="mentor-title">Product Designer Lead</div>
+                                <div class="mentor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    5.0 (15 avaliações)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mentor-price">R$ 120/h</div>
+                    </div>
+                    <div class="mentor-description">
+                        Designer com foco em UX Research e Product Design. Mentoro designers iniciantes e em transição de carreira.
+                    </div>
+                    <div class="mentor-skills">
+                        <span class="mentor-skill">UX Research</span>
+                        <span class="mentor-skill">Figma</span>
+                        <span class="mentor-skill">Product Strategy</span>
+                        <span class="mentor-skill">Portfolio Review</span>
+                    </div>
+                    <div class="mentor-actions">
+                        <button class="mentor-btn request-btn" onclick="requestMentorship('Ana Costa')">
+                            <i class="fas fa-calendar-check"></i> Solicitar Mentoria
+                        </button>
+                        <button class="mentor-btn profile-btn" onclick="viewProfile('Ana Costa')">
+                            <i class="fas fa-user"></i> Ver Perfil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MINHAS MENTORIAS -->
+        <div class="mentorships-section">
+            <div class="section-title">
+                <span><i class="fas fa-calendar-check"></i> Minhas Mentorias</span>
+            </div>
+            
+            <div id="myMentorships">
+                <!-- Mentorias ativas serão carregadas aqui -->
+                <div class="mentorship-card">
+                    <div class="mentorship-header">
+                        <div class="mentorship-status">Ativa</div>
+                        <div class="mentorship-date">Iniciada em: 01/11/2023</div>
+                    </div>
+                    <div class="mentorship-mentor">Mentor: Roberto Alves</div>
+                    <div class="mentorship-topic">Tópico: Transição para Data Science</div>
+                    <div class="mentorship-next">
+                        <i class="fas fa-calendar"></i>
+                        <span>Próxima sessão: 20/11/2023, 18:00</span>
+                    </div>
+                </div>
+                
+                <div class="empty-state" style="padding: 20px;">
+                    <p class="empty-text">Você tem 1 mentoria ativa</p>
+                    <button class="mentor-btn request-btn" onclick="scheduleNew()" style="width: 100%;">
+                        <i class="fas fa-plus"></i> Agendar Nova Mentoria
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SEÇÃO: OFERECER MENTORIA (OCULTA INICIALMENTE) -->
+    <div id="becomeMentorSection" style="display: none;">
+        <div class="become-mentor">
+            <div class="mentor-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="mentor-cta">Compartilhe seu conhecimento!</div>
+            <div class="mentor-description">
+                Torne-se um mentor e ajude outras pessoas a crescerem profissionalmente. 
+                Você define seus horários, preços e áreas de expertise.
+            </div>
+            <button class="mentor-btn request-btn" onclick="startMentorApplication()" style="width: 100%;">
+                <i class="fas fa-user-graduate"></i> Quero ser Mentor
+            </button>
+        </div>
+        
+        <!-- MENTORIAS OFERECIDAS -->
+        <div class="mentorships-section">
+            <div class="section-title">
+                <span><i class="fas fa-user-check"></i> Mentorias que Ofereço</span>
+            </div>
+            
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <p class="empty-text">Você ainda não oferece mentorias</p>
+                <p style="font-size: 12px; color: #666; margin-bottom: 20px;">
+                    Complete sua inscrição como mentor para começar a receber solicitações.
+                </p>
+                <button class="mentor-btn request-btn" onclick="startMentorApplication()" style="width: 100%;">
+                    Completar Inscrição
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="conexoes.html" class="nav-item">
+            <i class="fas fa-user-friends"></i>
+            <span>Conexões</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="comunidade.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Comunidade</span>
+        </a>
+        <a href="mentorias.html" class="nav-item active">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Mentorias</span>
+        </a>
+    </nav>
+    <script src="script/mentorias.js"></script>
+</body>
+</html>

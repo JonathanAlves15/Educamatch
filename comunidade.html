@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - Educamatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/comunidade.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <a href="home.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-title">Comunidade</div>
+            <div class="header-actions">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-plus" onclick="createGroup()"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BARRA DE PESQUISA -->
+    <div class="search-bar">
+        <i class="fas fa-search" style="color: #999;"></i>
+        <input type="text" class="search-input" placeholder="Buscar grupos, eventos ou tópicos...">
+    </div>
+    
+    <!-- CATEGORIAS -->
+    <div class="categories">
+        <div class="categories-title">Explorar por Categoria</div>
+        
+        <div class="categories-grid">
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="category-name">Programação</div>
+                <div class="category-count">12 grupos</div>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="category-name">Design</div>
+                <div class="category-count">8 grupos</div>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="category-name">Negócios</div>
+                <div class="category-count">6 grupos</div>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="category-name">Idiomas</div>
+                <div class="category-count">5 grupos</div>
+            </a>
+        </div>
+    </div>
+    
+    <!-- GRUPOS POPULARES -->
+    <div class="groups-section">
+        <div class="section-title">
+            <span><i class="fas fa-users"></i> Grupos Populares</span>
+            <a href="#" class="see-all">Ver todos</a>
+        </div>
+        
+        <div id="groupsList">
+            <!-- Grupos serão carregados aqui -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-info">
+                        <div class="group-avatar">JS</div>
+                        <div>
+                            <div class="group-name">JavaScript Brasil</div>
+                            <div class="group-members">245 membros</div>
+                        </div>
+                    </div>
+                    <button class="join-btn" onclick="joinGroup(this, 'JavaScript Brasil')">Participar</button>
+                </div>
+                <div class="group-description">
+                    Grupo para desenvolvedores JavaScript compartilharem conhecimento e projetos.
+                </div>
+                <div class="group-tags">
+                    <span class="group-tag">JavaScript</span>
+                    <span class="group-tag">Node.js</span>
+                    <span class="group-tag">React</span>
+                </div>
+            </div>
+            
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-info">
+                        <div class="group-avatar">UX</div>
+                        <div>
+                            <div class="group-name">UX/UX Designers</div>
+                            <div class="group-members">189 membros</div>
+                        </div>
+                    </div>
+                    <button class="join-btn" onclick="joinGroup(this, 'UX/UX Designers')">Participar</button>
+                </div>
+                <div class="group-description">
+                    Comunidade de designers para trocar experiências, portfolios e dicas.
+                </div>
+                <div class="group-tags">
+                    <span class="group-tag">UI Design</span>
+                    <span class="group-tag">UX Research</span>
+                    <span class="group-tag">Figma</span>
+                </div>
+            </div>
+            
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-info">
+                        <div class="group-avatar">DS</div>
+                        <div>
+                            <div class="group-name">Data Science BR</div>
+                            <div class="group-members">156 membros</div>
+                        </div>
+                    </div>
+                    <button class="joined-btn" onclick="leaveGroup(this, 'Data Science BR')">Participando</button>
+                </div>
+                <div class="group-description">
+                    Discussões sobre Data Science, Machine Learning e análise de dados.
+                </div>
+                <div class="group-tags">
+                    <span class="group-tag">Python</span>
+                    <span class="group-tag">Machine Learning</span>
+                    <span class="group-tag">Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- EVENTOS PRÓXIMOS -->
+    <div class="events-section">
+        <div class="section-title">
+            <span><i class="fas fa-calendar-alt"></i> Próximos Eventos</span>
+            <a href="#" class="see-all">Ver todos</a>
+        </div>
+        
+        <div id="eventsList">
+            <!-- Eventos serão carregados aqui -->
+            <div class="event-card">
+                <div class="event-date">
+                    <i class="far fa-calendar"></i> 15 Nov, 19:00
+                </div>
+                <div class="event-title">Workshop: Introdução ao React</div>
+                <div class="event-description">
+                    Aprenda os conceitos básicos do React com exemplos práticos.
+                </div>
+                <div class="event-info">
+                    <span><i class="fas fa-users"></i> Online</span>
+                    <span><i class="fas fa-clock"></i> 2 horas</span>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-date">
+                    <i class="far fa-calendar"></i> 20 Nov, 14:00
+                </div>
+                <div class="event-title">Meetup: Carreira em Tech</div>
+                <div class="event-description">
+                    Palestras sobre carreira e networking com profissionais da área.
+                </div>
+                <div class="event-info">
+                    <span><i class="fas fa-map-marker-alt"></i> São Paulo, SP</span>
+                    <span><i class="fas fa-clock"></i> 3 horas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="conexoes.html" class="nav-item">
+            <i class="fas fa-user-friends"></i>
+            <span>Conexões</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+        <a href="comunidade.html" class="nav-item active">
+            <i class="fas fa-users"></i>
+            <span>Comunidade</span>
+        </a>
+        <a href="mentorias.html" class="nav-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Mentorias</span>
+        </a>
+    </nav>
+    <script src="script/comunidade.js"></script>
+</body>
+</html>
